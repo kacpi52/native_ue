@@ -8,10 +8,8 @@ import apiYelpConnection from '../lib/ApiService'
 
 const Home = () => {
     const [restaurantData, setRestaurantData] = useState(localRestaurants);
-    useEffect(async () => {
-      const apiYelpData = await apiYelpConnection(location);
-      setRestaurantData(apiYelpData.businesses)
-    }, []);
+    const [activeTab, setActiveTab] = useState('Delivery');
+    
     
     return (
         <SafeAreaView style={{ backgroundColor: "#eee" , flex:1,}}>
@@ -21,7 +19,7 @@ const Home = () => {
             </View>
             <ScrollView showsVerticalScrollIndicator={false} >
                 <Categories />
-                <RestaurantItems restaurantData={restaurantData} />
+                <RestaurantItems restaurantData={restaurantData} activeTab={activeTab}/>
             </ScrollView>
         </SafeAreaView>
     )

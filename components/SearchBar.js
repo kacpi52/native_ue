@@ -8,7 +8,9 @@ const SearchBar = () => {
     return (
         <View style={{marginTop:15, flexDirection:'row', }}>
             <GooglePlacesAutocomplete
+                query={{ key:"AIzaSyC1E3d2NcMHArMiKEijhz0dVdWbs4TDqjY"}}
                 placeholder='Search'
+                
                 styles={{
                     textInput:{
                         backgroundColor:"#eee",
@@ -30,7 +32,11 @@ const SearchBar = () => {
                     </View>
                 )}
                 renderRightButton={()=>(
-                    <View style={{
+                    <View 
+                        onPress = {(data, details = null) =>{
+                console.log(data.description);
+                }}
+                    style={{
                         flexDirection:'row',
                         marginRight:8,
                         backgroundColor:'white',
@@ -41,6 +47,7 @@ const SearchBar = () => {
                         <AntDesign name='clockcircle' size={11} style={{marginRight:6,}}/>
                         <Text>Search</Text>
                     </View>
+                    
                 )}
              />
         </View>

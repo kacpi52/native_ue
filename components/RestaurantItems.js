@@ -40,7 +40,7 @@ const RestaurantItems = (props) => {
                 key={index}
                 style={{ marginTop: 10, padding: 15, backgroundColor: '#fff' }}>
                     <RestaurantImage image={restaurant.image_url} />
-                    <RestaurantInfo name={restaurant.name} rating={restaurant.rating} />
+                    <RestaurantInfo name={restaurant.name} order={props.activeTab} rating={restaurant.rating} />
                 </View>
             ))}
         </TouchableOpacity>
@@ -76,7 +76,7 @@ const RestaurantInfo =(props) =>(
         }} >
     <View>
         <Text style={{fontSize:15, fontWeight:'bold',}}>{props.name}</Text>
-        <Text style={{fontSize:13, color:'gray'}}>30-45 min</Text>    
+        <Text style={{fontSize:13, color:'gray'}}>30-45 min {props.order}</Text>    
     </View>
     <View style={{
         backgroundColor:'#eee',
