@@ -25,6 +25,7 @@ const Home = () => {
             </ScrollView>
                 <Divider width={1} />
                 <BottomTabs />
+                <Text>BLABLA</Text>
         </SafeAreaView>
     )
 }
